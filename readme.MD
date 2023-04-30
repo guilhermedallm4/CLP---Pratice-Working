@@ -1,0 +1,1 @@
+## Trabalho pratico relacionado a disciplina de Conceitos de Linguagem de Programação, realizando a conversão de um programa codificado na Linguagem C, para o método Eliminação Gaussiana para as linguagems de GoLang e RUST.
