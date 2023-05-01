@@ -10,8 +10,8 @@ Para executar, é necessário ter o compilador `Rust`. <br>
 1. Instale o Rust utilizando o `rustup` de acordo com o [site oficial](https://www.rust-lang.org/tools/install)
 2. Clone o repositório
 ```
-git clone https://github.com/guilhermedallm4/CLP---Pratice-Working
-cd 'CLP---Pratice-Working/Gauss Rust'
+git clone https://github.com/guilhermedallm4/CLP-Pratice-Working
+cd 'CLP-Pratice-Working/Gauss_Rust'
 ```
 3. Rode :)
 ```
