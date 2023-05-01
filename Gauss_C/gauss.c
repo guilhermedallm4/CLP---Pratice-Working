@@ -86,35 +86,6 @@ void initialize_inputs() {
 
 }
 
-/* Print input matrices */
-void print_inputs() {
-  int row, col;
-
-  if (N < 10) {
-    printf("\nA =\n\t");
-    for (row = 0; row < N; row++) {
-      for (col = 0; col < N; col++) {
-	printf("%5.2f%s", A[row][col], (col < N-1) ? ", " : ";\n\t");
-      }
-    }
-    printf("\nB = [");
-    for (col = 0; col < N; col++) {
-      printf("%5.2f%s", B[col], (col < N-1) ? "; " : "]\n");
-    }
-  }
-}
-
-void print_X() {
-  int row;
-
-  if (N < 100) {
-    printf("\nX = [");
-    for (row = 0; row < N; row++) {
-      printf("%5.2f%s", X[row], (row < N-1) ? "; " : "]\n");
-    }
-  }
-}
-
 int main(int argc, char **argv) {
   /* Timing variables */
   struct timeval etstart, etstop;  /* Elapsed times using gettimeofday() */
@@ -128,9 +99,6 @@ int main(int argc, char **argv) {
 
   /* Initialize A and B */
   initialize_inputs();
-
-  /* Print input matrices */
-  print_inputs();
 
   /* Start Clock */
   printf("\nStarting clock.\n");
@@ -146,9 +114,6 @@ int main(int argc, char **argv) {
   printf("Stopped clock.\n");
   usecstart = (unsigned long long)etstart.tv_sec * 1000000 + etstart.tv_usec;
   usecstop = (unsigned long long)etstop.tv_sec * 1000000 + etstop.tv_usec;
-
-  /* Display output */
-  print_X();
 
   /* Display timing results */
   printf("\nElapsed time = %g s.\n",
