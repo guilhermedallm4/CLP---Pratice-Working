@@ -1,6 +1,6 @@
 ## Implementação em Rust do método da Eliminação de Gauss
 Existe duas versões:
-1. Serial com representação da matriz como um vetor de vetores `Vec<Vec<f64>>`<br>
+1. Serial com representação da matriz como um vetor de vetores `Vec<Vec<f32>>`<br>
 2. Serial com representação da matriz mapeada em um vetor, utilizando a forma [row major](https://en.wikipedia.org/wiki/Row-_and_column-major_order).<br>
 
 Não existe implementado nenhuma interface para selecionar de forma simplificada qual algoritmo será executado, então é necessário descomentar a opção desejada na função `main` e recompilar e rodar :(

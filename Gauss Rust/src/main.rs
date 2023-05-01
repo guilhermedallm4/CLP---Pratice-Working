@@ -22,16 +22,16 @@ fn show_time(duration: &Duration) {
     let s = duration.as_secs() % 60;
     let m = duration.as_secs() / 60 % 60;
     let h = duration.as_secs() / 60 / 60;
-    println!("Total time: {}s", duration.as_secs_f64());
+    println!("Total time: {}s", duration.as_secs_f32());
     println!("\t{h:02}h:{m:02}m:{s:02}s:{ms:03}ms"); 
 }
 
-fn create_values(n: usize) -> (Vec<Vec<f64>>, Vec<f64>, Vec<f64>) {
+fn create_values(n: usize) -> (Vec<Vec<f32>>, Vec<f32>, Vec<f32>) {
     // let mut random = thread_rng();
     let mut r = StdRng::seed_from_u64(0);   // Reproducible random sequence
-    let mut A: Vec<Vec<f64>> = Vec::new();
-    let B: Vec<f64> = vec![1.0; n];
-    let X: Vec<f64> = vec![0.0; n];
+    let mut A: Vec<Vec<f32>> = Vec::new();
+    let B: Vec<f32> = vec![1.0; n];
+    let X: Vec<f32> = vec![0.0; n];
 
     for _ in 0..n {
         let mut temp = vec![0.0; n];
@@ -42,7 +42,7 @@ fn create_values(n: usize) -> (Vec<Vec<f64>>, Vec<f64>, Vec<f64>) {
     return (A, B, X);
 }
 
-fn gauss_solver(A: &mut Vec<Vec<f64>>, B: &mut Vec<f64>, X: &mut Vec<f64>) {
+fn gauss_solver(A: &mut Vec<Vec<f32>>, B: &mut Vec<f32>, X: &mut Vec<f32>) {
     let N = A.len();
 
     for norm in 0..(N - 1) {
@@ -65,11 +65,11 @@ fn gauss_solver(A: &mut Vec<Vec<f64>>, B: &mut Vec<f64>, X: &mut Vec<f64>) {
 }
 
 
-fn create_values_array2d(n: usize) -> (Array2D<f64>, Vec<f64>, Vec<f64>) {
+fn create_values_array2d(n: usize) -> (Array2D<f32>, Vec<f32>, Vec<f32>) {
     let mut r = StdRng::seed_from_u64(0);   // Reproducible random sequence
     let mut A = Array2D::new(n, n);
-    let B: Vec<f64> = vec![1.0; n];
-    let X: Vec<f64> = vec![0.0; n];
+    let B: Vec<f32> = vec![1.0; n];
+    let X: Vec<f32> = vec![0.0; n];
 
     for index in 0..n {
         r.try_fill(&mut A[index]).unwrap();
@@ -78,7 +78,7 @@ fn create_values_array2d(n: usize) -> (Array2D<f64>, Vec<f64>, Vec<f64>) {
     return (A, B, X);
 }
 
-fn gauss_solver_Array2D(A: &mut Array2D<f64>, B: &mut Vec<f64>, X: &mut Vec<f64>) {
+fn gauss_solver_Array2D(A: &mut Array2D<f32>, B: &mut Vec<f32>, X: &mut Vec<f32>) {
     let N = A.columns;
 
     for norm in 0..(N - 1) {
